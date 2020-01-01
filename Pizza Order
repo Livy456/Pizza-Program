@@ -1,0 +1,69 @@
+def cost_pizza(pizzas):
+    cost = 0
+    for pizza in pizzas:
+        cost += 13.00
+        for topping in pizza: 
+            if topping == "pepperoni":
+                cost += 1.00
+            if topping == "mushroom":
+                cost += 0.50
+            if topping =="olive":
+                cost += 0.50
+            if topping == "anchovy":
+                cost += 2.00
+            if topping == "ham":
+                cost += 1.50            
+            if topping == []:
+                cost += 0    
+    return cost
+
+
+def cost_drinks(drinks):
+    if drinks is None:
+        return 0.0
+    cost = 0.0
+    for drink in drinks:
+        if drink == "small":
+             cost += 2.00
+        if drink == "medium":
+            cost += 3.00
+        if drink == "large":
+            cost += 3.50
+        if drink == "tub":
+            cost += 3.75
+    return cost  
+    
+    
+def cost_wings(wings):
+    if wings is None:
+        return 0.0
+    cost = 0
+    for quantity in wings:
+        if quantity == 10:
+            cost += 5.00
+        elif quantity == 20:
+            cost += 9.00  
+        elif quantity == 40:
+            cost += 17.50
+        elif quantity == 100:
+            cost += 48.00
+    return cost
+
+def coupon(coupon):
+    if coupon is None:
+        coupon = 0
+        return coupon
+    else:
+        return coupon
+    
+
+def cost_calculator(*pizzas, wings=None, drinks=None, coupon=0.):
+    # write your code here, 
+    # be sure to include a `return` statement so that
+    # your function returns the appropriate object.
+    cost = cost_pizza(pizzas)
+    cost += cost_drinks(drinks)
+    cost += cost_wings(wings)
+    return round(cost * 1.0625 - cost * coupon, 2)
+    
+    pass
