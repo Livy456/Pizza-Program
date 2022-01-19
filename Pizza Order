@@ -67,3 +67,4 @@ def cost_calculator(*pizzas, wings=None, drinks=None, coupon=0.):
     return round(cost * 1.0625 - cost * coupon, 2)
     
     pass
+vim: syntax=python
